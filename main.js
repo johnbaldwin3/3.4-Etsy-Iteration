@@ -95,26 +95,52 @@ console.log(pricedBetween);
 Question #3
 
 **********************************************************/
-function findIt(item) {
 
-return items.currency_code === 'GBP';
-}
-
-var foundOut = items.filter(findIt);
-
-foundOut.
-
-console.log(foundOut);
-
-
-
+// find the item with the currency code of GBP
+var foundOut = items.filter(function(array, index){
+  //empty variable to store object
+  var titleOf;
+  //if statement searching for GBP
+  if (items[index].currency_code == "GBP") {
+    //store GBP item into variable
+    titleOf = items[index].title;
+  }
+  //return correct item to foundOut variable
+   return titleOf;
+});
+//two new variables for price and title;
+var beerTitle;
+var beerPrice;
+//for each'd my way into title and price
+foundOut.forEach(function(product) {
+beerTitle = product.title;
+beerPrice = product.price;
+ });
+//console.log the concat of beer title, beer price;
+console.log(beerTitle + " costs " + '£' + beerPrice );
 
 /**********************************************************
 Question #4
 
 **********************************************************/
+// create variable to hold woody things
+var findWoodItems = items.filter(function(array, index){
+      //empty variable inside to hold objects
+    var woodyItems;
+
+      //for each item that has a material that contains wood,
+      //add to woodyItems;
+    if (items[index].materials.includes('wood')) {
+      //woody item is the item at the index being searched
+      woodyItems = items[index];
+  }
+//return array of objects
+return woodyItems;
 
 
+});
+//console.log the wood items that were found...
+console.log(findWoodItems);
 
 
 
@@ -122,12 +148,43 @@ Question #4
 Question #5
 
 **********************************************************/
+//search for material amount greater than or equal to eight
+var findMaterialAmount = items.filter(function(array, index){
+      //empty variable inside to hold objects
+    var numofMaterial;
+
+  //look for all material amounts greater than or equal to 8 in each //array
+    if (items[index].materials.length >= 8) {
+      //add each item with 8 or more...
+      numofMaterial = items[index];
+  }
+//return array of objects
+return numofMaterial;
 
 
-
-
+});
+//log items
+console.log(findMaterialAmount);
 
 /**********************************************************
 Question #6
 
 **********************************************************/
+
+var findSellerMade = items.filter(function(array, index){
+      //empty variable inside to hold objects
+    var theyMadeIt;
+
+      //for each item that has a material that contains wood,
+      //add to woodyItems;
+    if (items[index].who_made.includes('i_did')) {
+      //woody item is the item at the index being searched
+      theyMadeIt = items[index];
+  }
+//return array of objects
+return theyMadeIt;
+
+
+});
+//console.log the wood items that were found...
+console.log(findSellerMade.length + " were made by their sellers!");
