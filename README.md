@@ -1,4 +1,4 @@
-## 7 4 Majestic Thai
+## 3 4 Etsy Iteration
 Week 3
 ------
 Website: https://johnbaldwin3.github.io/3.4-Etsy-Iteration/
